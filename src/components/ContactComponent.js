@@ -39,7 +39,7 @@ class Contact extends Component {
         if (this.state.touched.firstName) {
             if (firstName.length < 2) {
                 errors.firstName = 'First name must be at least 2 characters.';
-            } else if (firstName.legnth > 15) {
+            } else if (firstName.length > 15) {
                 errors.firstName = 'First name must be 15 or less characters.';
             }
         }
@@ -47,7 +47,7 @@ class Contact extends Component {
         if (this.state.touched.lastName) {
             if (lastName.length < 2) {
                 errors.lastName = 'Last name must be at least 2 characters.';
-            } else if (lastName.legnth > 15) {
+            } else if (lastName.length > 15) {
                 errors.lastName = 'Last name must be 15 or less characters.';
             }
         }
@@ -65,7 +65,7 @@ class Contact extends Component {
     }
 
     handleBlur = (field) => () => {
-        this.setStage ({
+        this.setState ({
             touched: {...this.state.touched, [field]: true}
         })
     }
