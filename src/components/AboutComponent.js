@@ -26,22 +26,22 @@ function RenderPartner({ partner }){
 
 function PartnerList(props) {
     
-    // const partners = props.partners.map(partner => {
-    //     return (
-    //         <Media tag="li" key={partner.id}>
-    //             <RenderPartner partner={partner} />
-    //         </Media>
-    //     );
-    // });
+    const partners = props.partners.map(partner => {
+        return (
+            <Media tag="li" key={partner.id}>
+                <RenderPartner partner={partner} />
+            </Media>
+        );
+    });
     console.log(props);
 
-    if (isLoading) {
+    if (props.isLoading) {
         return <Loading />;
     }
-    if (errMess) {
+    if (props.errMess) {
         return (
             <div className="col">
-                <h4>{errMess}</h4>
+                <h4>{props.errMess}</h4>
             </div>
         )
     }
